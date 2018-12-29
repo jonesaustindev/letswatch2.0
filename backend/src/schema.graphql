@@ -1,3 +1,5 @@
+# import * from './generated/prisma.graphql'
+
 type NowPlayingMovie {
     title: String
     backdrop_path: String
@@ -18,17 +20,73 @@ type PopularResults {
     results: [PopularMovie]
 }
 
+type Actor {
+    character: String
+    name: String
+    profile_path: String
+}
+
+type Cast {
+    cast: [Actor]
+}
+
+type Results {
+    results: [Videos]
+}
+
+type Videos {
+    id: ID
+    name: String
+    key: String
+    type: String
+}
+
+type Backdrops {
+    backdrops: [Images]
+}
+
+type Images {
+    file_path: String
+}
+
+type SingleMovie {
+    id: ID
+    poster_path: String
+    backdrop_path: String
+    overview: String
+    release_date: String
+    runtime: Int
+    title: String
+    vote_average: Float
+    credits: Cast
+    videos: Results
+    images: Backdrops
+}
+
+type SuccessMessage {
+    message: String
+}
+
 type User {
     id: ID!
     name: String!
     email: String!
+    likes: [LikeListItem]
 }
 
 type Mutation {
-    hi: String
+    signup(email: String!, password: String!, name: String!): User!
+    signin(email: String!, password: String!): User!
+    signout: SuccessMessage
+    addToLikes(like: String!): LikeListItem
 }
 
 type Query {
     nowPlaying: NowPlayingResults
     popular: PopularResults
+    singleMovie(id: ID): SingleMovie
+    me: User
+    users: [User]!
+    likeListItem(id: ID!): LikeListItem
+    likeListItems(orderBy: LikeListItemOrderByInput): [LikeListItem]!
 }

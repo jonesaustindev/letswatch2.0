@@ -130,10 +130,7 @@ class NowPlaying extends Component {
                                         <div key={index} className={`item item${index + 1} h${this.randomNumber()} v${this.randomNumber()}`}>
                                             <img alt={movie.title} src={backdrop} />
                                             <div className="item__overlay">
-                                                <Link href={{
-                                                    pathname: '/movie',
-                                                    query: { id: movie.id }
-                                                }}>
+                                                <Link href={{ pathname: '/movie', query: { id: movie.id } }}>
                                                     <a>View More</a>
                                                 </Link>
                                             </div>

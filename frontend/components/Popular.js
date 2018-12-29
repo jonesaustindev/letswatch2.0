@@ -28,13 +28,13 @@ class Popular extends Component {
                     const results = data.popular.results;
                     return (
                         <div>
-                            {results.slice(0, 8).map((movie, index) => {
-                                return (
-                                    <ul>
+                            <ul>
+                                {results.slice(0, 8).map((movie, index) => {
+                                    return (
                                         <li key={index}>{movie.title}</li>
-                                    </ul>
-                                )
-                            })}
+                                    )
+                                })}
+                            </ul>
                         </div>
                     )
                 }}

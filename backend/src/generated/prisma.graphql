@@ -1,5 +1,9 @@
 # source: https://us1.prisma.sh/lets-watch/lets-watch/dev
-# timestamp: Thu Dec 13 2018 01:13:36 GMT-0600 (Central Standard Time)
+# timestamp: Sat Dec 29 2018 00:40:18 GMT-0600 (Central Standard Time)
+
+type AggregateLikeListItem {
+  count: Int!
+}
 
 type AggregateUser {
   count: Int!
@@ -10,6 +14,331 @@ type BatchPayload {
   count: Long!
 }
 
+type LikeListItem implements Node {
+  id: ID!
+  like: String!
+  user: User!
+}
+
+"""A connection to a list of items."""
+type LikeListItemConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [LikeListItemEdge]!
+  aggregate: AggregateLikeListItem!
+}
+
+input LikeListItemCreateInput {
+  like: String!
+  user: UserCreateOneWithoutLikesInput!
+}
+
+input LikeListItemCreateManyWithoutUserInput {
+  create: [LikeListItemCreateWithoutUserInput!]
+  connect: [LikeListItemWhereUniqueInput!]
+}
+
+input LikeListItemCreateWithoutUserInput {
+  like: String!
+}
+
+"""An edge in a connection."""
+type LikeListItemEdge {
+  """The item at the end of the edge."""
+  node: LikeListItem!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum LikeListItemOrderByInput {
+  id_ASC
+  id_DESC
+  like_ASC
+  like_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type LikeListItemPreviousValues {
+  id: ID!
+  like: String!
+}
+
+input LikeListItemScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [LikeListItemScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [LikeListItemScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [LikeListItemScalarWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  like: String
+
+  """All values that are not equal to given value."""
+  like_not: String
+
+  """All values that are contained in given list."""
+  like_in: [String!]
+
+  """All values that are not contained in given list."""
+  like_not_in: [String!]
+
+  """All values less than the given value."""
+  like_lt: String
+
+  """All values less than or equal the given value."""
+  like_lte: String
+
+  """All values greater than the given value."""
+  like_gt: String
+
+  """All values greater than or equal the given value."""
+  like_gte: String
+
+  """All values containing the given string."""
+  like_contains: String
+
+  """All values not containing the given string."""
+  like_not_contains: String
+
+  """All values starting with the given string."""
+  like_starts_with: String
+
+  """All values not starting with the given string."""
+  like_not_starts_with: String
+
+  """All values ending with the given string."""
+  like_ends_with: String
+
+  """All values not ending with the given string."""
+  like_not_ends_with: String
+}
+
+type LikeListItemSubscriptionPayload {
+  mutation: MutationType!
+  node: LikeListItem
+  updatedFields: [String!]
+  previousValues: LikeListItemPreviousValues
+}
+
+input LikeListItemSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [LikeListItemSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [LikeListItemSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [LikeListItemSubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: LikeListItemWhereInput
+}
+
+input LikeListItemUpdateInput {
+  like: String
+  user: UserUpdateOneRequiredWithoutLikesInput
+}
+
+input LikeListItemUpdateManyDataInput {
+  like: String
+}
+
+input LikeListItemUpdateManyMutationInput {
+  like: String
+}
+
+input LikeListItemUpdateManyWithoutUserInput {
+  create: [LikeListItemCreateWithoutUserInput!]
+  connect: [LikeListItemWhereUniqueInput!]
+  disconnect: [LikeListItemWhereUniqueInput!]
+  delete: [LikeListItemWhereUniqueInput!]
+  update: [LikeListItemUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [LikeListItemUpdateManyWithWhereNestedInput!]
+  deleteMany: [LikeListItemScalarWhereInput!]
+  upsert: [LikeListItemUpsertWithWhereUniqueWithoutUserInput!]
+}
+
+input LikeListItemUpdateManyWithWhereNestedInput {
+  where: LikeListItemScalarWhereInput!
+  data: LikeListItemUpdateManyDataInput!
+}
+
+input LikeListItemUpdateWithoutUserDataInput {
+  like: String
+}
+
+input LikeListItemUpdateWithWhereUniqueWithoutUserInput {
+  where: LikeListItemWhereUniqueInput!
+  data: LikeListItemUpdateWithoutUserDataInput!
+}
+
+input LikeListItemUpsertWithWhereUniqueWithoutUserInput {
+  where: LikeListItemWhereUniqueInput!
+  update: LikeListItemUpdateWithoutUserDataInput!
+  create: LikeListItemCreateWithoutUserInput!
+}
+
+input LikeListItemWhereInput {
+  """Logical AND on all given filters."""
+  AND: [LikeListItemWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [LikeListItemWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [LikeListItemWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  like: String
+
+  """All values that are not equal to given value."""
+  like_not: String
+
+  """All values that are contained in given list."""
+  like_in: [String!]
+
+  """All values that are not contained in given list."""
+  like_not_in: [String!]
+
+  """All values less than the given value."""
+  like_lt: String
+
+  """All values less than or equal the given value."""
+  like_lte: String
+
+  """All values greater than the given value."""
+  like_gt: String
+
+  """All values greater than or equal the given value."""
+  like_gte: String
+
+  """All values containing the given string."""
+  like_contains: String
+
+  """All values not containing the given string."""
+  like_not_contains: String
+
+  """All values starting with the given string."""
+  like_starts_with: String
+
+  """All values not starting with the given string."""
+  like_not_starts_with: String
+
+  """All values ending with the given string."""
+  like_ends_with: String
+
+  """All values not ending with the given string."""
+  like_not_ends_with: String
+  user: UserWhereInput
+}
+
+input LikeListItemWhereUniqueInput {
+  id: ID
+}
+
 """
 The `Long` scalar type represents non-fractional signed whole numeric values.
 Long can represent values between -(2^63) and 2^63 - 1.
@@ -18,11 +347,17 @@ scalar Long
 
 type Mutation {
   createUser(data: UserCreateInput!): User!
+  createLikeListItem(data: LikeListItemCreateInput!): LikeListItem!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updateLikeListItem(data: LikeListItemUpdateInput!, where: LikeListItemWhereUniqueInput!): LikeListItem
   deleteUser(where: UserWhereUniqueInput!): User
+  deleteLikeListItem(where: LikeListItemWhereUniqueInput!): LikeListItem
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  upsertLikeListItem(where: LikeListItemWhereUniqueInput!, create: LikeListItemCreateInput!, update: LikeListItemUpdateInput!): LikeListItem!
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  updateManyLikeListItems(data: LikeListItemUpdateManyMutationInput!, where: LikeListItemWhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
+  deleteManyLikeListItems(where: LikeListItemWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -54,8 +389,11 @@ type PageInfo {
 
 type Query {
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
+  likeListItems(where: LikeListItemWhereInput, orderBy: LikeListItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LikeListItem]!
   user(where: UserWhereUniqueInput!): User
+  likeListItem(where: LikeListItemWhereUniqueInput!): LikeListItem
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
+  likeListItemsConnection(where: LikeListItemWhereInput, orderBy: LikeListItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LikeListItemConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -66,6 +404,7 @@ type Query {
 
 type Subscription {
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+  likeListItem(where: LikeListItemSubscriptionWhereInput): LikeListItemSubscriptionPayload
 }
 
 type User implements Node {
@@ -75,6 +414,7 @@ type User implements Node {
   password: String!
   resetToken: String
   resetTokenExpiry: Float
+  likes(where: LikeListItemWhereInput, orderBy: LikeListItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LikeListItem!]
 }
 
 """A connection to a list of items."""
@@ -88,6 +428,20 @@ type UserConnection {
 }
 
 input UserCreateInput {
+  name: String!
+  email: String!
+  password: String!
+  resetToken: String
+  resetTokenExpiry: Float
+  likes: LikeListItemCreateManyWithoutUserInput
+}
+
+input UserCreateOneWithoutLikesInput {
+  create: UserCreateWithoutLikesInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutLikesInput {
   name: String!
   email: String!
   password: String!
@@ -177,6 +531,7 @@ input UserUpdateInput {
   password: String
   resetToken: String
   resetTokenExpiry: Float
+  likes: LikeListItemUpdateManyWithoutUserInput
 }
 
 input UserUpdateManyMutationInput {
@@ -185,6 +540,26 @@ input UserUpdateManyMutationInput {
   password: String
   resetToken: String
   resetTokenExpiry: Float
+}
+
+input UserUpdateOneRequiredWithoutLikesInput {
+  create: UserCreateWithoutLikesInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateWithoutLikesDataInput
+  upsert: UserUpsertWithoutLikesInput
+}
+
+input UserUpdateWithoutLikesDataInput {
+  name: String
+  email: String
+  password: String
+  resetToken: String
+  resetTokenExpiry: Float
+}
+
+input UserUpsertWithoutLikesInput {
+  update: UserUpdateWithoutLikesDataInput!
+  create: UserCreateWithoutLikesInput!
 }
 
 input UserWhereInput {
@@ -418,6 +793,9 @@ input UserWhereInput {
 
   """All values greater than or equal the given value."""
   resetTokenExpiry_gte: Float
+  likes_every: LikeListItemWhereInput
+  likes_some: LikeListItemWhereInput
+  likes_none: LikeListItemWhereInput
 }
 
 input UserWhereUniqueInput {

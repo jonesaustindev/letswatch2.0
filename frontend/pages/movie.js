@@ -1,6 +1,8 @@
+import MoviePage from '../components/MoviePage';
+
 const Movie = props => (
     <div>
-        <h1>Movie Page</h1>
+        <MoviePage id={props.query.id} />
     </div>
 );
 
