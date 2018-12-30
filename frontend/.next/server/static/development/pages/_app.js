@@ -246,7 +246,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    query USER_LIKES_QUERY {\n        likeListItems {\n            id\n            like\n            user {\n                name\n            }\n        }\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    query USER_LIKES_QUERY {\n        likeListItems {\n            id\n            like\n        }\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -281,20 +281,20 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 19
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PleaseSignin__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 20
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Query"], {
         query: USER_LIKES_QUERY,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 21
         },
         __self: this
       }, function (_ref) {
@@ -304,14 +304,14 @@ function (_Component) {
         if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 25
           },
           __self: this
         }, "Loading...");
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 29
+            lineNumber: 26
           },
           __self: this
         }, "Error: ", error.message);
@@ -319,19 +319,19 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 29
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 30
           },
           __self: this
         }, "Likes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 32
           },
           __self: this
         }, likedMovies.map(function (movie, index) {
@@ -340,7 +340,7 @@ function (_Component) {
             id: movie.like,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 38
+              lineNumber: 35
             },
             __self: this
           });
@@ -406,7 +406,7 @@ var Meta = function Meta() {
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-    href: "https://fonts.googleapis.com/css?family=Hind",
+    href: "https://fonts.googleapis.com/css?family=Montserrat",
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
@@ -443,6 +443,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "next/link");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "C:\\Users\\Other User\\Desktop\\fullStackProjects\\letswatch\\letswatch2.0\\frontend\\components\\MovieCard.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -479,10 +481,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var Card = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "MovieCard__Card",
   componentId: "sc-1wc2p49-0"
-})(["max-height:445px;width:300px;overflow:hidden;box-shadow:", ";margin-top:20px;margin-bottom:20px;.movie-card .poster{position:relative;overflow:hidden;}.movie-card .poster:before{position:absolute;content:'';bottom:-300px;left:0;width:100%;height:100%;background:linear-gradient(0deg,#000 40%,transparent);transition:0.5s;z-index:1;}.movie-card:hover .poster:before{bottom:0;}.movie-card .poster img{width:100%;transition:0.5s;}.movie-card:hover .poster img{filter:blur(2px);transform:translateY(-40px);}"], function (props) {
+})(["position:relative;max-height:445px;width:300px;overflow:hidden;background:#000;box-shadow:", ";margin-top:20px;margin-bottom:20px;.movie-card .poster{position:relative;overflow:hidden;}.movie-card .poster:before{position:absolute;content:'';bottom:-300px;left:0;width:100%;height:100%;background:linear-gradient(0deg,#000 40%,transparent);transition:0.5s;z-index:1;}.movie-card:hover .poster:before{bottom:0;}.movie-card .poster img{width:100%;transition:0.5s;}.movie-card:hover .poster img{filter:blur(2px);transform:translateY(-40px);}.movie-details{position:absolute;padding:20px;width:100%;height:100%;bottom:-450px;left:0;box-sizing:border-box;transition:0.7s;z-index:2;color:#f7f7f7;}.movie-card:hover .movie-details{bottom:0;}.movie-details h3{margin:0;padding:0;padding-bottom:5px;font-size:1.2rem;font-weight:700;}.movie-details h5{font-size:1.1rem;}.movie-details h6{font-size:1rem;}.movie-card p{font-size:0.9rem;}.movie-card-overview{padding-top:18px;}.movie-card-overview p{margin-bottom:2px;}.view-more{text-decoration:none;color:#f7f7f7;}.view-more:hover{color:#f7f7f7;}"], function (props) {
   return props.theme.boxShadow;
 });
 var MOVIE_CARD_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_1___default()(_templateObject());
@@ -508,7 +511,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 119
         },
         __self: this
       }, function (_ref) {
@@ -518,14 +521,14 @@ function (_Component) {
         if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 126
           },
           __self: this
         }, "Loading...");
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 127
           },
           __self: this
         }, "Error: ", error);
@@ -535,21 +538,21 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 77
+            lineNumber: 134
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-card",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 135
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "poster",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79
+            lineNumber: 136
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -557,57 +560,75 @@ function (_Component) {
           src: posterUrl,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79
+            lineNumber: 136
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-details",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 137
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "card-title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 81
+            lineNumber: 138
           },
           __self: this
         }, movie.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
           className: "card-text",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 82
+            lineNumber: 139
           },
           __self: this
         }, "User Rating ", movie.vote_average * 10, "%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
           className: "card-text",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83
+            lineNumber: 140
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 84
+            lineNumber: 141
           },
           __self: this
         }, movie.release_date.slice(0, 4))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-card-overview",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 86
+            lineNumber: 143
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 87
+            lineNumber: 144
           },
           __self: this
-        }, overview)))));
+        }, overview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+          href: {
+            pathname: '/movie',
+            query: {
+              id: movie.id
+            }
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 145
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 146
+          },
+          __self: this
+        }, "View More"))))));
       });
     }
   }]);
@@ -769,7 +790,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    html {\n        box-sizing: border-box;\n    }\n    body {\n        padding: 0;\n        margin: 0;\n        font-size: 1.5rem;\n        line-height: 2;\n        font-family: 'Hind', sans-serif;\n    }\n    *, *:before, *:after {\n        box-sizing: inherit;\n    }\n    a {\n        text-decoration: none;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    html {\n        box-sizing: border-box;\n    }\n    body {\n        padding: 0;\n        margin: 0;\n        font-size: 1.5rem;\n        font-family: 'Montserrat', sans-serif;\n    }\n    *, *:before, *:after {\n        box-sizing: inherit;\n    }\n    a {\n        text-decoration: none;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -788,6 +809,7 @@ var theme = {
   maxWidth: '1200px',
   boxShadow: '0 12px 25px 0 rgba(0,0,0,0.095)',
   bigBreak: '1500px',
+  offWhite: '#efefef',
   mainGradient: 'linear-gradient(to right bottom, #7e2c22, #832e23, #892f25, #8e3126, #943328, #9b382a, #a23c2b, #a9412d, #b34a2f, #bd5332, #c75c34, #d16536);'
 };
 Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["injectGlobal"])(_templateObject());
@@ -798,9 +820,7 @@ var StyledPage = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.wi
 var Inner = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Page__Inner",
   componentId: "sc-9x1txa-1"
-})(["margin:0 auto;padding:1.5em;max-width:", ";"], function (props) {
-  return props.theme.maxWidth;
-});
+})(["margin:0 auto;padding-top:0;"]);
 
 var Page =
 /*#__PURE__*/
@@ -820,31 +840,31 @@ function (_Component) {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledPage, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 46
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Meta__WEBPACK_IMPORTED_MODULE_2__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 47
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 48
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Inner, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 49
         },
         __self: this
       }, this.props.children)));

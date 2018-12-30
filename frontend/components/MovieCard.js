@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Card = styled.div`
+    position: relative;
     max-height: 445px;
     width: 300px;
     overflow: hidden;
+    background: #000;
     box-shadow: ${props => props.theme.boxShadow};
     margin-top: 20px;
     margin-bottom: 20px;
@@ -40,6 +43,60 @@ const Card = styled.div`
     .movie-card:hover .poster img {
         filter: blur(2px);
         transform: translateY(-40px);
+    }
+
+    .movie-details {
+        position: absolute;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        bottom: -450px;
+        left: 0;
+        box-sizing: border-box;
+        transition: 0.7s;
+        z-index: 2;
+        color: #f7f7f7;
+    }
+
+    .movie-card:hover .movie-details {
+        bottom: 0;
+    }
+
+    .movie-details h3 {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 5px;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .movie-details h5 {
+        font-size: 1.1rem;
+    }
+
+    .movie-details h6 {
+        font-size: 1rem;
+    }
+
+    .movie-card p {
+        font-size: 0.9rem;
+    }
+
+    .movie-card-overview {
+        padding-top: 18px;
+    }
+
+    .movie-card-overview p {
+        margin-bottom: 2px;
+    }
+
+    .view-more {
+        text-decoration: none;
+        color: #f7f7f7;
+    }
+
+    .view-more:hover {
+        color: #f7f7f7;
     }
 `;
 
@@ -85,6 +142,9 @@ class MovieCard extends Component {
                                     </h6>
                                     <div className="movie-card-overview">
                                         <p>{overview}</p>
+                                        <Link href={{ pathname: '/movie', query: { id: movie.id } }}>
+                                            <a>View More</a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

@@ -38,32 +38,6 @@ const Mutations = {
         ctx.response.clearCookie('token');
         return { message: 'Logged Out' };
     },
-    // async createLike(parent, args, ctx, info) {
-    //     if (!ctx.request.userId) {
-    //         throw new Error('You must be logged in to do that!');
-    //     }
-
-    //     const like = await ctx.db.mutation.createLike({
-    //         data: {
-    //             user: {
-    //                 connect: {
-    //                     id: ctx.request.userId
-    //                 },
-    //             },
-    //             ...args
-    //         }
-    //     }, info);
-    //     return like;
-    // },
-    // async deleteLike(parent, args, ctx, info) {
-    //     const where = { id: args.id };
-    //     const like = await ctx.db.query.like({ where }, `{ id user { id } }`);
-    //     const hasLike = like.user.id === ctx.request.userId;
-    //     if(!hasLike) {
-    //         throw new Error('Unable to remove');
-    //     }
-    //     return ctx.db.mutation.deleteLike({ where }, info);
-    // },
     async addToLikes(parent, args, ctx, info) {
         const userId = ctx.request.userId;
         if (!userId) {
@@ -86,6 +60,10 @@ const Mutations = {
                 ...args
             }
         }, info);
+    },
+    async deleteLikeListItem(parent, args, ctx, info) {
+        const where = { id: args.id };
+        return ctx.db.mutation.deleteLikeListItem({ where }, info);
     }
 };
 

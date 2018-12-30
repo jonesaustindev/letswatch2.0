@@ -79,6 +79,7 @@ type Mutation {
     signin(email: String!, password: String!): User!
     signout: SuccessMessage
     addToLikes(like: String!): LikeListItem
+    deleteLikeListItem(id: ID!): LikeListItem
 }
 
 type Query {

@@ -9,9 +9,6 @@ const USER_LIKES_QUERY = gql`
         likeListItems {
             id
             like
-            user {
-                name
-            }
         }
     }
 `;
