@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import styled from 'styled-components';
 import PleaseSignIn from '../components/PleaseSignin';
 import MovieCard from './MovieCard';
 
@@ -10,6 +11,21 @@ const USER_LIKES_QUERY = gql`
             id
             like
         }
+    }
+`;
+
+const LikesContainer = styled.div`
+    max-width: ${props => props.theme.maxWidth};
+    margin: auto;
+    h3 {
+        color: ${props => props.theme.mainColor};
+        padding: 20px;
+    }
+    .actor-grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        padding: 20px;
     }
 `;
 
@@ -27,15 +43,16 @@ class Likes extends Component {
                             const likedMovies = data.likeListItems;
                             return (
                                 <div>
-                                    <h3>Likes</h3>
-
-                                    <div>
-                                        {likedMovies.map((movie, index) => {
-                                            return (
-                                                <MovieCard key={index} id={movie.like} />
-                                            )
-                                        })}
-                                    </div>
+                                    <LikesContainer>
+                                        <h3>Your Liked Movies</h3>
+                                        <div className="actor-grid">
+                                            {likedMovies.map((movie, index) => {
+                                                return (
+                                                    <MovieCard key={index} id={movie.like} />
+                                                )
+                                            })}
+                                        </div>
+                                    </LikesContainer>
                                 </div>
                             )
                         }}

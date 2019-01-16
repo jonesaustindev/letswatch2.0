@@ -12,8 +12,17 @@ const DELETE_LIKE_MUTATION = gql`
     }
 `;
 
-const RemoveButton = styled.button`
+const RemoveButton = styled.a`
     color: red;
+    padding: 15px;
+    i {
+        font-size: 1.5rem;
+    }
+    i:hover {
+        cursor: pointer;
+    }
+    border: 1.5px solid white;
+    border-radius: 50%;
 `;
 
 class RemoveLike extends Component {
@@ -32,7 +41,7 @@ class RemoveLike extends Component {
                 {(deleteLikeListItem, { error }) => {
                     return (
                         <RemoveButton onClick={deleteLikeListItem}>
-                            Like
+                            <i class="fas fa-heart"></i>
                         </RemoveButton>
                     )
                 }}

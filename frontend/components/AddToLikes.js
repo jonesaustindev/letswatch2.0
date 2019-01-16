@@ -5,12 +5,17 @@ import styled from 'styled-components';
 import { USER_LIKES_QUERY } from './Likes';
 import RemoveLike from './RemoveLike';
 
-const LikedBtn = styled.button`
-    color: red;
-`;
-
-const NotLikedBtn = styled.button`
-    color: blue;
+const NotLikedBtn = styled.a`
+    color: white;
+    padding: 15px;
+    i {
+        font-size: 1.5rem;
+    }
+    i:hover {
+        cursor: pointer;
+    }
+    border: 1.5px solid white;
+    border-radius: 50%;
 `;
 
 const ADD_TO_LIKES_MUTATION = gql`
@@ -42,7 +47,7 @@ class AddToLikes extends Component {
                             const checkedLikes = currentUserLikes.includes(movieId);
                             
                             if(checkedLikes == false) {
-                                return <NotLikedBtn onClick={addToLikes}>Like</NotLikedBtn>
+                                return <NotLikedBtn onClick={addToLikes}><i class="far fa-heart"></i></NotLikedBtn>
                             }
                             
                             if(checkedLikes == true) {

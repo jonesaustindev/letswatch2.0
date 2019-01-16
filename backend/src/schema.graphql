@@ -20,6 +20,18 @@ type PopularResults {
     results: [PopularMovie]
 }
 
+type SearchMovie {
+    title: String
+    poster_path: String
+    overview: String
+    release_date: String
+    id: ID
+}
+
+type SearchResults {
+    results: [SearchMovie]
+}
+
 type Actor {
     character: String
     name: String
@@ -86,6 +98,7 @@ type Query {
     nowPlaying: NowPlayingResults
     popular: PopularResults
     singleMovie(id: ID): SingleMovie
+    searchMovie(search: String): SearchResults
     me: User
     users: [User]!
     likeListItem(id: ID!): LikeListItem

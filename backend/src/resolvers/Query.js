@@ -16,6 +16,10 @@ const Query = {
         return fetch(`${baseURL}/${args.id}?api_key=${process.env.API_KEY}&append_to_response=credits,videos,images,reviews`)
             .then(res => res.json());
     },
+    searchMovie(parent, args, ctx, info) {
+        return fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${args.search}&region=US`)
+            .then(res => res.json());
+    },
     me(parent, args, ctx, info) {
         if(!ctx.request.userId) {
             return null;

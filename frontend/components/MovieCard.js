@@ -3,16 +3,16 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import styled from 'styled-components';
 import Link from 'next/link';
+import ReactLoading from 'react-loading';
 
 const Card = styled.div`
     position: relative;
-    max-height: 445px;
-    width: 300px;
+    /* max-height: 445px; */
     overflow: hidden;
     background: #000;
     box-shadow: ${props => props.theme.boxShadow};
     margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 
     .movie-card .poster {
         position: relative;
@@ -22,7 +22,7 @@ const Card = styled.div`
     .movie-card .poster:before {
         position: absolute;
         content: '';
-        bottom: -300px;
+        bottom: -400px;
         left: 0;
         width: 100%;
         height: 100%;
@@ -37,6 +37,7 @@ const Card = styled.div`
 
     .movie-card .poster img {
         width: 100%;
+        height: 100%;
         transition: 0.5s;
     }
 
@@ -50,7 +51,7 @@ const Card = styled.div`
         padding: 20px;
         width: 100%;
         height: 100%;
-        bottom: -450px;
+        bottom: -600px;
         left: 0;
         box-sizing: border-box;
         transition: 0.7s;
@@ -71,11 +72,15 @@ const Card = styled.div`
     }
 
     .movie-details h5 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
     }
 
     .movie-details h6 {
         font-size: 1rem;
+        padding: 0;
+        margin: 0;
     }
 
     .movie-card p {
@@ -87,16 +92,21 @@ const Card = styled.div`
     }
 
     .movie-card-overview p {
-        margin-bottom: 2px;
+        margin-bottom: 20px;
     }
 
     .view-more {
-        text-decoration: none;
+        padding-top: 50px;
         color: #f7f7f7;
     }
 
     .view-more:hover {
         color: #f7f7f7;
+        text-decoration: underline;
+    }
+
+    a {
+        font-size: 1rem;
     }
 `;
 
@@ -123,7 +133,7 @@ class MovieCard extends Component {
                 }}
             >
                 {({ error, loading, data }) => {
-                    if (loading) return <p>Loading...</p>
+                    if (loading) return <ReactLoading type="bubbles" color="#FF5733" />
                     if (error) return <p>Error: {error}</p>
 
                     const movie = data.singleMovie;
@@ -143,7 +153,7 @@ class MovieCard extends Component {
                                     <div className="movie-card-overview">
                                         <p>{overview}</p>
                                         <Link href={{ pathname: '/movie', query: { id: movie.id } }}>
-                                            <a>View More</a>
+                                            <a className="view-more">View More</a>
                                         </Link>
                                     </div>
                                 </div>
