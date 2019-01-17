@@ -21,11 +21,12 @@ server.express.use((req, res, next) => {
     next();
 });
 
-server.start(
-    // cors: {
-    //     credentials: true,
-    //     origin: 'https://lets-watch-next-prod.herokuapp.com/'
-    // }
+server.start({
+    cors: {
+        credentials: true,
+        origin: process.env.FRONTEND_URL
+    }
+},
  details => {
     console.log(`Let's Watch server is now running on port http:/localhost:${details.port}`);
 });
