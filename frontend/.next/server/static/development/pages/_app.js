@@ -694,12 +694,14 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var NavStyle = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "Nav__NavStyle",
   componentId: "of8hrj-0"
-})(["margin:0;padding:0;display:flex;justify-self:start;a,button{padding:1rem 2rem;color:", ";display:flex;align-items:center;position:relative;text-transform:uppercase;font-size:3vmin;background:none;cursor:pointer;}button{border:none;font:inherit;cursor:pointer;font-size:3vmin;}a:hover{text-decoration-color:", ";text-decoration:underline;}button:hover{text-decoration-color:", ";text-decoration:underline;}"], function (props) {
+})(["margin:0;padding:0;display:flex;justify-self:start;a,button{padding:1rem 2rem;color:", ";display:flex;align-items:center;position:relative;text-transform:uppercase;font-size:3vmin;background:none;cursor:pointer;}button{border:none;font:inherit;cursor:pointer;font-size:3vmin;}a:hover{text-decoration-color:", ";text-decoration:underline;}button:hover{text-decoration-color:", ";text-decoration:underline;}@media(max-width:", "){a,button{padding:0.5rem 1rem;}}"], function (props) {
   return props.theme.mainColor;
 }, function (props) {
   return props.theme.mainColor;
 }, function (props) {
   return props.theme.mainColor;
+}, function (props) {
+  return props.theme.smallBreak;
 });
 var SIGN_OUT_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject());
 
@@ -707,7 +709,7 @@ var Nav = function Nav() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 56
     },
     __self: this
   }, function (_ref) {
@@ -715,52 +717,52 @@ var Nav = function Nav() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavStyle, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 58
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 59
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 60
       },
       __self: this
     }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/search",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 62
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 63
       },
       __self: this
     }, "Search")), me && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 68
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/likes",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 69
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 70
       },
       __self: this
     }, "View Likes")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_3__["Mutation"], {
@@ -772,7 +774,7 @@ var Nav = function Nav() {
       }],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 72
       },
       __self: this
     }, function (signout) {
@@ -780,40 +782,40 @@ var Nav = function Nav() {
         onClick: signout,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 80
         },
         __self: this
       }, "Sign Out");
     })), !me && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 88
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/signup",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 89
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 90
       },
       __self: this
     }, "Signup")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/signin",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 92
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 93
       },
       __self: this
     }, "Log In"))));

@@ -36,6 +36,11 @@ const NavStyle = styled.div`
         text-decoration-color: ${props => props.theme.mainColor};
         text-decoration: underline;
     }
+    @media(max-width: ${props => props.theme.smallBreak}) {
+        a, button {
+            padding: 0.5rem 1rem;
+        }
+    }
 `;
 
 
