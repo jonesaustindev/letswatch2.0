@@ -731,7 +731,7 @@ function (_Component) {
           lineNumber: 42
         },
         __self: this
-      }, "Top Movies In Theaters"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NowPlaying__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "Top Movies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NowPlaying__WEBPACK_IMPORTED_MODULE_2__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 43

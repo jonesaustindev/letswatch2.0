@@ -39,7 +39,7 @@ class HomeContainer extends Component {
       <div>
         <Container>
           <div>
-            <h3>Top Movies In Theaters</h3>
+            <h3>Top Movies</h3>
             <NowPlaying />
           </div>
           <div className="popular">
