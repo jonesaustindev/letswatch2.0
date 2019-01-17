@@ -10,7 +10,7 @@ const cors = require('cors');
 const server = createServer();
 
 server.express.use(cookieParser());
-server.express.options('*', cors());
+// server.express.options('*', cors());
 
 server.express.use((req, res, next) => {
     const { token } = req.cookies;
