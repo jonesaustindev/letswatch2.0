@@ -108,6 +108,11 @@ const Card = styled.div`
     a {
         font-size: 1rem;
     }
+
+    .release-date {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 `;
 
 const MOVIE_CARD_QUERY = gql`
@@ -148,7 +153,7 @@ class MovieCard extends Component {
                                     <h3 className="card-title">{movie.title}</h3>
                                     <h5 className="card-text">User Rating {movie.vote_average * 10}%</h5>
                                     <h6 className="card-text">
-                                        <p>{movie.release_date.slice(0, 4)}</p>
+                                        <p className="release-date">{movie.release_date.slice(0, 4)}</p>
                                     </h6>
                                     <div className="movie-card-overview">
                                         <p>{overview}</p>

@@ -234,7 +234,7 @@ var USER_LIKES_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_1___default()(_templ
 var LikesContainer = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "Likes__LikesContainer",
   componentId: "sc-16r3n2g-0"
-})(["max-width:", ";margin:auto;h3{color:", ";padding:20px;}.actor-grid{display:grid;grid-gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));padding:20px;}"], function (props) {
+})(["max-width:", ";margin:auto;h4{color:", ";padding:20px;}.actor-grid{display:grid;grid-gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));padding:20px;}"], function (props) {
   return props.theme.maxWidth;
 }, function (props) {
   return props.theme.mainColor;
@@ -304,7 +304,7 @@ function (_Component) {
             lineNumber: 46
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 47
@@ -489,7 +489,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var Card = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "MovieCard__Card",
   componentId: "sc-1wc2p49-0"
-})(["position:relative;overflow:hidden;background:#000;box-shadow:", ";margin-top:20px;.movie-card .poster{position:relative;overflow:hidden;}.movie-card .poster:before{position:absolute;content:'';bottom:-400px;left:0;width:100%;height:100%;background:linear-gradient(0deg,#000 40%,transparent);transition:0.5s;z-index:1;}.movie-card:hover .poster:before{bottom:0;}.movie-card .poster img{width:100%;height:100%;transition:0.5s;}.movie-card:hover .poster img{filter:blur(2px);transform:translateY(-40px);}.movie-details{position:absolute;padding:20px;width:100%;height:100%;bottom:-600px;left:0;box-sizing:border-box;transition:0.7s;z-index:2;color:#f7f7f7;}.movie-card:hover .movie-details{bottom:0;}.movie-details h3{margin:0;padding:0;padding-bottom:5px;font-size:1.2rem;font-weight:700;}.movie-details h5{font-size:1rem;padding:0;margin:0;}.movie-details h6{font-size:1rem;padding:0;margin:0;}.movie-card p{font-size:0.9rem;}.movie-card-overview{padding-top:18px;}.movie-card-overview p{margin-bottom:20px;}.view-more{padding-top:50px;color:#f7f7f7;}.view-more:hover{color:#f7f7f7;text-decoration:underline;}a{font-size:1rem;}"], function (props) {
+})(["position:relative;overflow:hidden;background:#000;box-shadow:", ";margin-top:20px;.movie-card .poster{position:relative;overflow:hidden;}.movie-card .poster:before{position:absolute;content:'';bottom:-400px;left:0;width:100%;height:100%;background:linear-gradient(0deg,#000 40%,transparent);transition:0.5s;z-index:1;}.movie-card:hover .poster:before{bottom:0;}.movie-card .poster img{width:100%;height:100%;transition:0.5s;}.movie-card:hover .poster img{filter:blur(2px);transform:translateY(-40px);}.movie-details{position:absolute;padding:20px;width:100%;height:100%;bottom:-600px;left:0;box-sizing:border-box;transition:0.7s;z-index:2;color:#f7f7f7;}.movie-card:hover .movie-details{bottom:0;}.movie-details h3{margin:0;padding:0;padding-bottom:5px;font-size:1.2rem;font-weight:700;}.movie-details h5{font-size:1rem;padding:0;margin:0;}.movie-details h6{font-size:1rem;padding:0;margin:0;}.movie-card p{font-size:0.9rem;}.movie-card-overview{padding-top:18px;}.movie-card-overview p{margin-bottom:20px;}.view-more{padding-top:50px;color:#f7f7f7;}.view-more:hover{color:#f7f7f7;text-decoration:underline;}a{font-size:1rem;}.release-date{margin-bottom:0;padding-bottom:0;}"], function (props) {
   return props.theme.boxShadow;
 });
 var MOVIE_CARD_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_1___default()(_templateObject());
@@ -515,7 +515,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 134
         },
         __self: this
       }, function (_ref) {
@@ -527,14 +527,14 @@ function (_Component) {
           color: "#FF5733",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 136
+            lineNumber: 141
           },
           __self: this
         });
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 137
+            lineNumber: 142
           },
           __self: this
         }, "Error: ", error);
@@ -544,21 +544,21 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 144
+            lineNumber: 149
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-card",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 145
+            lineNumber: 150
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "poster",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 146
+            lineNumber: 151
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -566,54 +566,55 @@ function (_Component) {
           src: posterUrl,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 146
+            lineNumber: 151
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-details",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 147
+            lineNumber: 152
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "card-title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 148
+            lineNumber: 153
           },
           __self: this
         }, movie.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
           className: "card-text",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 149
+            lineNumber: 154
           },
           __self: this
         }, "User Rating ", movie.vote_average * 10, "%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
           className: "card-text",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 150
+            lineNumber: 155
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "release-date",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 151
+            lineNumber: 156
           },
           __self: this
         }, movie.release_date.slice(0, 4))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-card-overview",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 153
+            lineNumber: 158
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 154
+            lineNumber: 159
           },
           __self: this
         }, overview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -625,14 +626,14 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 155
+            lineNumber: 160
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "view-more",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 156
+            lineNumber: 161
           },
           __self: this
         }, "View More"))))));
@@ -1399,9 +1400,9 @@ function createClient(_ref) {
     uri:  true ? _config__WEBPACK_IMPORTED_MODULE_2__["endpoint"] : undefined,
     request: function request(operation) {
       operation.setContext({
-        // fetchOptions: {
-        //   credentials: 'include',
-        // },
+        fetchOptions: {
+          credentials: 'include'
+        },
         headers: headers
       });
     },

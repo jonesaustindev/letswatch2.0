@@ -17,7 +17,7 @@ const USER_LIKES_QUERY = gql`
 const LikesContainer = styled.div`
     max-width: ${props => props.theme.maxWidth};
     margin: auto;
-    h3 {
+    h4 {
         color: ${props => props.theme.mainColor};
         padding: 20px;
     }
@@ -44,7 +44,7 @@ class Likes extends Component {
                             return (
                                 <div>
                                     <LikesContainer>
-                                        <h3>Your Liked Movies</h3>
+                                        <h4>Your Liked Movies</h4>
                                         <div className="actor-grid">
                                             {likedMovies.map((movie, index) => {
                                                 return (
