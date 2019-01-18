@@ -5,6 +5,7 @@ import Router from 'next/router';
 import styled from 'styled-components';
 import { CURRENT_USER_QUERY } from './User';
 import { USER_LIKES_QUERY } from './Likes';
+import Error from './ErrorMessage';
 
 const FormContainer = styled.div`
     form {
@@ -78,7 +79,7 @@ class Signin extends Component {
                                 }}>
                                 <fieldset disabled={loading} aria-busy={loading}>
                                     <h3>Sign In</h3>
-                                    <p>{error}</p>
+                                    <Error error={error} />
                                     <div className="input-field">
                                         <label htmlFor="email">
                                             <input

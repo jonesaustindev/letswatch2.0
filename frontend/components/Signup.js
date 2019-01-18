@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import styled from 'styled-components';
 import { CURRENT_USER_QUERY } from './User';
 import { USER_LIKES_QUERY } from './Likes';
+import Error from './ErrorMessage';
 
 const SIGNUP_MUTATION = gql`
     mutation SIGNUP_MUTATION($name: String!, $password: String!, $email: String!) {
@@ -76,7 +77,7 @@ class Signup extends Component {
                                 }}>
                                 <fieldset disabled={loading} aria-busy={loading}>
                                     <h3>Sign Up For an Account</h3>
-                                    <p>{error}</p>
+                                    <Error error={error} />
                                     <div className="input-field">
                                         <label htmlFor="email">
                                             <input
